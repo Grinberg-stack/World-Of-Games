@@ -1,0 +1,8 @@
+# PyCharm or IntelliJ IDEA project files
+.idea/
+
+# Python compiled files
+__pycache__/
+
+# Git attributes file
+.gitattributes
