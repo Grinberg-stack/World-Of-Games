@@ -72,6 +72,6 @@ def main_function(url):
 
 
 if __name__ == "__main__":
-    url = "http://127.0.0.1:5000/score"  # Replace with the URL of your Flask application
+    url = "http://127.0.0.1:8777/score"  # Replace with the URL of your Flask application
     exit_code = main_function(url)
     print(f"Exit code: {exit_code}")
