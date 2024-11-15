@@ -1,13 +1,14 @@
 version: '3.8'
 
 services:
-  web:
+  app:
     build: .
+    container_name: score_app
     ports:
-      - "5000:5000"
+      - "8777:8777"  
     volumes:
-      - .:/app 
+      - ./Scores.txt:/Scores.txt  #
     environment:
-      - FLASK_APP=main_score.py 
-      - FLASK_RUN_HOST=0.0.0.0 # for checking outside the container
-    restart: always 
+      - FLASK_RUN_HOST=0.0.0.0  
+      - FLASK_RUN_PORT=8777  
+    restart: unless-stopped  

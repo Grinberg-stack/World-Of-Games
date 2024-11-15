@@ -7,15 +7,18 @@ WORKDIR /app
 # Copy all project files from the local directory to /app in the container
 COPY . /app
 
-# Install the required Python Pips from the requirements.txt file
+# Install the required Python packages from the requirements.txt file
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Scores.txt file from the local directory to the root of the container
 COPY Scores.txt /Scores.txt
 
-# environment variable Flask to listen on all available network interfaces (not just localhost)
-# This allows the app to be accessible from outside the container
+# Set environment variables for Flask
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=8777
 
-# This will start the Flask server when the container is run
+# Start the Flask server directly (without Gunicorn)
 CMD ["python", "main_score.py"]
+
+# Expose the port so Docker knows the app will be using it
+EXPOSE 8777
