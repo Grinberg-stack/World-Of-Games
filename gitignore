@@ -1,8 +1,6 @@
-# PyCharm or IntelliJ IDEA project files
+# Ignore IDE-specific files
 .idea/
 
-# Python compiled files
+# Ignore compiled Python files
 __pycache__/
-
-# Git attributes file
-.gitattributes
+*.pyc
